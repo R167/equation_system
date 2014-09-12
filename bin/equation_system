@@ -29,16 +29,15 @@ end.parse!
 options[:range] ||= Math.log(options[:variables], 1.12).ceil+1
 range = options[:range].abs
 
-system = EquationSystem::System.new(options[:variables], (-range..range))
+equation_system = EquationSystem::System.new(options[:variables], range: (-range..range))
 
 if options[:json]
   require 'json'
-  out = {:equations => system.equations, :variables => system.answers}.to_json
-  puts out
+  puts equation_system.to_json
 else
-  puts system.equations
+  puts equation_system.equations
   puts
-  system.answers.each do |var, val|
+  equation_system.answers.each do |var, val|
     puts "%#{Math.log(options[:variables], 26).ceil}s => %+03d" % [var, val]
   end
 end

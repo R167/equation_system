@@ -22,6 +22,11 @@ module EquationSystem
         super
       end
     end
+    
+    def to_json
+      require 'json' unless defined?(JSON)
+      {:equations => @equations, :variables => @answers}.to_json
+    end
   
     private
   

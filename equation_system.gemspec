@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = EquationSystem::VERSION
   spec.authors       = ["Winston Durand"]
   spec.email         = ["me@winstondurand.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Generates a system of equations.}
+  spec.description   = %q{Generates a system of equations made solely of integer values.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,5 +20,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rspec", "~> 3.0.0"
 end

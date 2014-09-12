@@ -1,5 +1,9 @@
 require "equation_system/version"
 
+require "equation_system/system"
+
 module EquationSystem
-  # Your code goes here...
+  def self.new(*args)
+    System.new(*args)
+  end
 end

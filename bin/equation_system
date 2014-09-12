@@ -1,3 +1,44 @@
 #!/usr/bin/env ruby
 
 require 'equation_system'
+
+require 'optparse'
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: equation_system.rb [options]"
+
+  opts.on("-v", "--variables COUNT", Integer, "Number of variables for the system of equations") do |vars|
+    options[:variables] = vars
+  end
+  
+  opts.on("-r", "--range RANGE", Integer, "Range of function") do |range|
+    options[:range] = range
+  end
+  
+  opts.on("-j", "--json", "Output in JSON") do
+    options[:json] = true
+  end
+  
+  opts.on("-h", "--help", "Shows this help message") do
+    puts opts
+    exit
+  end
+end.parse!
+
+options[:range] ||= Math.log(options[:variables], 1.12).ceil+1
+range = options[:range].abs
+
+system = EquationSystem::System.new(options[:variables], (-range..range))
+
+if options[:json]
+  require 'json'
+  out = {:equations => system.equations, :variables => system.answers}.to_json
+  puts out
+else
+  puts system.equations
+  puts
+  system.answers.each do |var, val|
+    puts "%#{Math.log(options[:variables], 26).ceil}s => %+03d" % [var, val]
+  end
+end

@@ -1,7 +1,9 @@
 module EquationSystem  
   class Error < StandardError; end
   
-  class TooFewVariablesError < RangeError; end
+  class TooFewVariablesError < Error; end
   
-  class RangeTooSmallError < RangeError; end
+  class RangeTooSmallError < Error; end
+  
+  class FailSafeError < Error; end
 end

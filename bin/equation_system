@@ -26,14 +26,14 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-options[:range] ||= Math.log(options[:variables], 1.12).ceil+1
-range = options[:range].abs
-
 unless options[:variables].is_a?(Integer)
   puts "Missing number of variables for equation"
   puts "Call with -h or --help for help"
   exit(1)
 end
+
+options[:range] ||= Math.log(options[:variables], 1.12).ceil+1
+range = options[:range].abs
 
 equation_system = EquationSystem::System.new(options[:variables], range: (-range..range))
 

@@ -1,6 +1,7 @@
 module EquationSystem
   class System 
     def initialize(variables, range: -10..10, allow_zero: false, failsafe: 10)
+      raise FailSafeError, "Failsafe cannot be less than 1" if failsafe < 1
       @prng = Random.new
       @answers = generate_answers(variables, range, allow_zero)
       @equations = generate_equations(@answers, range, allow_zero, failsafe)

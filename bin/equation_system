@@ -8,11 +8,11 @@ options = {}
 OptionParser.new do |opts|
   opts.banner = "Usage: equation_system [options]"
 
-  opts.on("-v", "--variables COUNT", Integer, "Number of variables for the system of equations") do |vars|
+  opts.on("-v", "--variables COUNT", Integer, "Number of variables for the system of equations (required)") do |vars|
     options[:variables] = vars
   end
   
-  opts.on("-r", "--range RANGE", Integer, "Range of function") do |range|
+  opts.on("-r", "--range RANGE", Integer, "Range of function given a whole number") do |range|
     options[:range] = range
   end
   

@@ -47,8 +47,8 @@ It can return the output in the json format.
 Call with `-h` or `--help` for the help menu
 ```
 Usage: equation_system.rb [options]
-    -v, --variables COUNT            Number of variables for the system of equations
-    -r, --range RANGE                Range of function
+    -v, --variables COUNT            Number of variables for the system of equations (required)
+    -r, --range RANGE                Range of function given a whole number
     -j, --json                       Output in JSON
     -h, --help                       Shows this help message
 ```

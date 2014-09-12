@@ -38,8 +38,20 @@ equation_system.solution_for_x
 # => -8
 ```
 
-This gem also adds the commandline tool equation_system.
-It can return the 
+This gem also adds the commandline tool `equation_system`.
+It can return the output in the json format.
+``` json
+{"equations":["7x - 8y - 5z = -21","-9x - 10y - 10z = -202","6x - 8y + 4z = 52"],"variables":{"x":8,"y":4,"z":9}}
+```
+
+Call with `-h` or `--help` for the help menu
+```
+Usage: equation_system.rb [options]
+    -v, --variables COUNT            Number of variables for the system of equations
+    -r, --range RANGE                Range of function
+    -j, --json                       Output in JSON
+    -h, --help                       Shows this help message
+```
 
 ## Contributing
 

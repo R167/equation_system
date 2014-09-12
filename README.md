@@ -1,3 +1,6 @@
+[![Gem Version](https://badge.fury.io/rb/equation_system.svg)](http://badge.fury.io/rb/equation_system)
+[![Build Status](https://travis-ci.org/R167/equation_system.svg)](https://travis-ci.org/R167/equation_system)
+
 # EquationSystem
 
 This gem will generate a system of equations up to an arbitrary size.
